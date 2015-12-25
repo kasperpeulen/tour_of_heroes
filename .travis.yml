@@ -3,3 +3,5 @@ dart:
   - dev
 sudo: false
 script: pub run grinder travis
+before_install:
+ - gem install sass
