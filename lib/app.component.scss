@@ -1,0 +1,30 @@
+ul#heroes {
+  list-style-type: none;
+  padding-left: 1em;
+  width: 10em;
+
+  li {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    left: 0;
+
+    &:hover {
+      color: #369;
+      background-color: #EEE;
+      left: .2em;
+    }
+
+    &.selected {
+      color: #369;
+      background-color: #EEE;
+    }
+
+    span.badge {
+      color: white;
+      background-color: #369;
+      font-size: small;
+      padding: 0.1em 0.7em;
+    }
+  }
+}

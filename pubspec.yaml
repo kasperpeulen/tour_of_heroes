@@ -1,0 +1,17 @@
+name: tour_of_heroes
+version: 0.0.1
+environment:
+  sdk: '>=1.13.0 <2.0.0'
+dependencies:
+  angular2: 2.0.0-beta.0
+dev_dependencies:
+  browser: ^0.10.0
+  sass: ^0.4.2
+  dart_to_js_script_rewriter: ^0.1.0+4
+  grinder: ^0.8.0+1
+transformers:
+- sass
+- angular2:
+    entry_points: web/main.dart
+- dart_to_js_script_rewriter
+
