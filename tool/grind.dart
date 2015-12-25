@@ -5,12 +5,22 @@ void main(List<String> args) {
 }
 
 @DefaultTask()
-@Depends(format, analyze)
+@Depends(format, analyze, peanut)
 void prepush() {}
 
-@Depends(testFormat, analyze)
+@Depends(testFormat, analyze, build)
 @Task()
 void travis() {}
+
+@Task()
+void build() {
+  Pub.build(directories: ['web']);
+}
+
+@Task('Peanut should be run before each push, to update the demo in gh-pages.')
+void peanut() {
+  Pub.global.run('peanut');
+}
 
 @Task('Analyze all Dart files.')
 void analyze() {
